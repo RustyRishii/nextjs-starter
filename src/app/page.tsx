@@ -33,8 +33,8 @@ export default function Home() {
   return (
     <Flex
       fillWidth
-      paddingTop="l"
-      paddingX="l"
+      //paddingTop="l"
+      //paddingX="l"
       direction="column"
       alignItems="center"
       flex={1}
@@ -53,31 +53,27 @@ export default function Home() {
         label="Refresh"
         //prefixIcon="FaGoogle"
       />
-      {quote ? (
-        <Flex
-          fillWidth
-          justifyContent="center"
-          width={50}
-          height={10}
-          background="brand-strong"
-          direction="column"
-          margin="12"
-          radius="l"
-        >
-          <RevealFx speed="fast" trigger delay={0} translateY={0}>
-            <Flex align="center" direction="column" padding="12" gap="8">
-              <Text variant="heading-strong-m">{quote.text} </Text>
-              <Text
-                variant="heading-strong-s"
-                onBackground="neutral-medium"
-                marginBottom="16"
-              >
-                -{quote.author}
-              </Text>
-            </Flex>
-          </RevealFx>
-        </Flex>
-      ) : null}
+
+      <Flex marginLeft="64" marginRight="64">
+        {quote ? (
+          <Flex
+            fillWidth
+            justifyContent="center"
+            width={50}
+            background="brand-strong"
+            direction="column"
+            margin="12"
+            radius="l"
+          >
+            <RevealFx speed="fast" trigger delay={0} translateY={0}>
+              <Flex align="center" direction="column" padding="12" gap="8">
+                <Text variant="heading-strong-m">{quote.text} </Text>
+                <Text variant="heading-strong-s">-{quote.author}</Text>
+              </Flex>
+            </RevealFx>
+          </Flex>
+        ) : null}
+      </Flex>
     </Flex>
   );
 }
